@@ -29,5 +29,17 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+zh-CN:
+  layouts:
+    admin:
+      shared:
+        sidebar:
+          dashboard: "控制面板"
+          data: "数据"
+          experts: "专家"
+          users: "用户"
+          papers: "博硕论文"
+          journals: "期刊"
+          books: "图书"
+          ancient_books: "古籍"
+  

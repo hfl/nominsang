@@ -7,6 +7,7 @@ class Admin::ExpertsController < ApplicationController
   end
   
   def new
-    
+    @page_title = "新增专家学者"
+    @expert = Expert.new
   end
 end

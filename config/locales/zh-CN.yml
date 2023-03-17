@@ -30,6 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 zh-CN:
+  # 通用
+  home: "首页"
+  
   layouts:
     admin:
       shared:
@@ -42,4 +45,36 @@ zh-CN:
           journals: "期刊"
           books: "图书"
           ancient_books: "古籍"
-  
+  admin:
+    experts:
+      new:
+        experts: "专家"
+        new_expert: "新增专家"
+      form:
+        general: "通用信息"
+        avatar: "肖像"
+        please_select_avatar: "请选择肖像文件"
+      index:
+        experts: "专家"
+        experts_list: "全部专家"
+        new_expert: "新增专家"
+        name: "姓名"
+        alias_name: "曾用名"
+        nation: "民族"
+        occupation: "专业"
+        
+  # 数据库
+  activerecord:
+    models:
+      expert: "专家"
+    attributes:
+      expert:
+        name: "姓名"
+        alias_name: "曾用名"
+        sex: "性别"
+        nation: "民族/国别"
+        birthday: "出生时间"
+        deathday: "逝世时间"
+        birthplace: "出生地"
+        occupation: "主要专业"
+        biographical_text: "生平"

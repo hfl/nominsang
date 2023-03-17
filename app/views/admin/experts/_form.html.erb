@@ -1,0 +1,102 @@
+    <section class="content">
+      <%= form_with(model: [:admin, expert]) do |form| %>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title"><%= t(".general") %></h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+
+              <% if expert.errors.any? %>
+                <div style="color: red">
+                  <h2><%= pluralize(expert.errors.count, "error") %> prohibited this expert from being saved:</h2>
+
+                  <ul>
+                    <% expert.errors.each do |error| %>
+                      <li><%= error.full_message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <div class="form-group">
+                <%= form.label :name %>
+                <%= form.text_field :name, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :alias_name %>
+                <%= form.text_field :alias_name, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :sex %>
+                <%= form.text_field :sex, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :nation %>
+                <%= form.text_field :nation, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :birthday %>
+                <%= form.text_field :birthday, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :deathday %>
+                <%= form.text_field :deathday, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :birthplace %>
+                <%= form.text_field :birthplace, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :occupation %>
+                <%= form.text_field :occupation, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :biographical_text %>
+                <%= form.text_area :biographical_text, class: "form-control", rows: 4 %>
+              </div>
+
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <div class="col-md-6">
+          <div class="card card-secondary">
+            <div class="card-header">
+              <h3 class="card-title"><%= t(".avatar") %></h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+              <div class="custom-file">
+                <%= form.file_field :avatar, class: "custom-file-input" %>
+                <label for="expert_avatar" class="custom-file-label"><%= t(".please_select_avatar") %></label>
+              </div>               
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <a href="#" class="btn btn-secondary">Cancel</a>
+          <%= form.submit class: "btn btn-success float-right" %>
+        </div>
+      </div>
+      <% end %>
+    </section>
+

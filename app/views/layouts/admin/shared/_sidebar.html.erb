@@ -138,7 +138,14 @@
               </p>
             </a>
           </li>
-
+          <li class="nav-item">
+            <a href="<%= admin_site_path %>" class="nav-link<%= " active" if controller.controller_name == "sites" %>">
+              <i class="nav-icon fa-solid fa-sitemap"></i>
+              <p>
+                <%= t(".site") %>
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

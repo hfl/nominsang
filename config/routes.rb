@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get 'dashboard/home'
     root "dashboard#home"
     resources :experts
+    resource :site
   end
   get 'home/index'
   root "home#index"

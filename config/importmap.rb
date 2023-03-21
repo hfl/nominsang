@@ -9,3 +9,4 @@ pin "@fortawesome/fontawesome-free", to: "https://ga.jspm.io/npm:@fortawesome/fo
 pin "jquery", to: "admin/jquery.min.js"
 pin "bootstrap", to: "admin/bootstrap.bundle.min.js"
 pin "adminlte", to: "admin/adminlte.min.js"
+

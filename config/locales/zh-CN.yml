@@ -45,6 +45,7 @@ zh-CN:
           journals: "期刊"
           books: "图书"
           ancient_books: "古籍"
+          site: "站点"
   admin:
     experts:
       new:

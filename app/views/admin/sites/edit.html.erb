@@ -1,0 +1,71 @@
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1><%= t(".site") %></h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="<%= admin_root_path %>"><%= t("home") %></a></li>
+              <li class="breadcrumb-item"><%= link_to t(".site"), admin_site_path %></li>
+              <li class="breadcrumb-item active"><%= link_to t(".edit_site"), edit_admin_site_path %></li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <%= form_with(model: [:admin, @site]) do |form| %>
+            <div class="card card-primary">
+
+              <div class="card-header">
+                <h3 class="card-title"><%= t(".edit_site_information") %></h3>
+              </div>
+              <!-- /.card-header -->
+              
+              <div class="card-body">
+                <% if @site.errors.any? %>
+                  <div style="color: red">
+                    <h2>保存数据时发现 <%= pluralize(@site.errors.count, "个错误") %>：</h2>
+                    <ul>
+                      <% @site.errors.each do |error| %>
+                        <li><%= error.full_message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+                <div class="form-group">
+                  <%= form.label :name %>
+                  <%= form.text_field :name, class: "form-control form-control-border" %>
+                </div>
+                <div class="form-group">
+                  <%= form.label :slogan %>
+                  <%= form.text_field :slogan, class: "form-control form-control-border" %>
+                </div>
+                <div class="form-group">
+                  <%= form.label :name %>
+                  <%= form.text_area :about, class: "form-control form-control-border", rows: 6 %>
+                </div>
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <%= form.submit class: "btn btn-primary"%>
+              </div>
+            </div>
+
+            <!-- /.card -->
+          </div>
+        <% end %>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+

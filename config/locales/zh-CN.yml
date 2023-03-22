@@ -38,7 +38,7 @@ zh-CN:
       shared:
         sidebar:
           dashboard: "控制面板"
-          data: "数据"
+          data: "文献"
           experts: "专家"
           users: "用户"
           papers: "博硕论文"
@@ -63,11 +63,21 @@ zh-CN:
         alias_name: "曾用名"
         nation: "民族"
         occupation: "专业"
+    sites:
+      show:
+        site_information: "站点信息"
+        site: "站点"
+        edit_site_information: "编辑站点信息"
+      edit:
+        site: "站点"
+        edit_site: "编辑站点"
+        edit_site_information: "编辑站点信息"
         
   # 数据库
   activerecord:
     models:
       expert: "专家"
+      site: "站点"
     attributes:
       expert:
         name: "姓名"
@@ -79,3 +89,7 @@ zh-CN:
         birthplace: "出生地"
         occupation: "主要专业"
         biographical_text: "生平"
+      site:
+        name: "站点名"
+        slogan: "标语"
+        about: "简介"

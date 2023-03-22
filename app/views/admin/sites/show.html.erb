@@ -1,2 +1,50 @@
-<h1>Admin::Sites#index</h1>
-<p>Find me in app/views/admin/sites/index.html.erb</p>
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1><%= t(".site") %></h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><%= link_to t("home"), admin_root_path %></li>
+              <li class="breadcrumb-item active"><%= t(".site") %></li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <% if notice %>
+      <div class="callout callout-info">
+        <h5><i class="fas fa-info"></i> Notice:</h5>
+        <%= notice %>
+      </div>
+      <% end %>
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><%= t(".site_information") %></h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
+              <h3 class="text-primary"><i class="fas fa-paint-brush"></i> <%= @site.name %></h3>
+              <p class="text-muted"><%= @site.slogan %></p>
+              <br>
+              <div class="text-muted">
+                <%= @site.about %>
+              </div>
+
+              <div class="text-center mt-5 mb-3">
+                <%=link_to t(".edit_site_information"), edit_admin_site_path, class: "btn btn-sm btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>

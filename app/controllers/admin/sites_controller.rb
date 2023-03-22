@@ -8,6 +8,7 @@ class Admin::SitesController < ApplicationController
   end
   
   def edit
+    @page_title = "编辑站点"
     @site = Site.first
   end
   

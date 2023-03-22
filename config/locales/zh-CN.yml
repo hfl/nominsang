@@ -32,6 +32,8 @@
 zh-CN:
   # 通用
   home: "首页"
+  created_at: "信息创建于"
+  updated_at: "信息更新于"
   
   layouts:
     admin:

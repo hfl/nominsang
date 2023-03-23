@@ -12,6 +12,10 @@ class Admin::UsersController < ApplicationController
     @user =  User.find(params[:id])
   end
   
+  def profile
+    @page_title = "My Profile"
+  end
+  
   def new
     @page_title = "新增用户"
     @user = User.new

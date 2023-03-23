@@ -6,6 +6,11 @@ class Admin::ExpertsController < ApplicationController
     @experts = Expert.all
   end
   
+  def show
+    @page_title = "专家信息"
+    @expert = Expert.find(params[:id])
+  end
+  
   def new
     @page_title = "新增专家学者"
     @expert = Expert.new
@@ -23,6 +28,7 @@ class Admin::ExpertsController < ApplicationController
   end
   
   def edit
+    @page_title = "编辑专家信息"
     @expert = Expert.find(params[:id])
   end
   

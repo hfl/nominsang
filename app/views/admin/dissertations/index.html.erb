@@ -1,0 +1,93 @@
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1><%= t(".dissertations") %></h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="<%= admin_root_path %>"><%= t("home") %></a></li>
+              <li class="breadcrumb-item active"><%= t(".dissertations") %></li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><%= t(".dissertations_list") %></h3>
+
+          <div class="card-tools">
+            <%= link_to t(".new_dissertation"), new_admin_dissertation_path %>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width: 1%">
+                          ID
+                      </th>
+                      <th style="width: 20%">
+                          <%= t(".email") %>
+                      </th>
+                      <th style="width: 30%">
+                          <%= t(".password") %>
+                      </th>
+                      <th>
+                          <%= t(".name") %>
+                      </th>
+                      <th style="width: 8%" class="text-center">
+                          <%= t("created_at") %>
+                      </th>
+                      <th style="width: 20%">
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <% @dissertations.each do |dissertation| %>
+                  <tr>
+                      <td>
+                          <%= dissertation.id %>
+                      </td>
+                      <td>
+                          <a>
+                              <%= dissertation.title %>
+                          </a>
+                      </td>
+                      <td>
+
+                      </td>
+                      <td class="project_progress">
+
+                      </td>
+                      <td class="project-state">
+                          <%= dissertation.created_at %>
+                      </td>
+                      <td class="project-actions text-right">
+                          <a class="btn btn-primary btn-sm" href="<%= admin_dissertation_path(dissertation) %>">
+                              <i class="fas fa-eye">
+                              </i>
+                          </a>
+                          <a class="btn btn-info btn-sm" href="<%= edit_admin_dissertation_path(dissertation) %>">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                          </a>
+                          <%= link_to '<i class="fas fa-trash"></i>'.html_safe, [:admin, dissertation], data: { turbo_method: :delete, turbo_confirm: "您确认删除该信息吗？" }, class: "btn btn-danger btn-sm" %>
+                      </td>
+                  </tr>
+                  <% end %>
+              </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>
+

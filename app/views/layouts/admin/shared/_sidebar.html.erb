@@ -13,11 +13,11 @@
           <%= image_tag "user2-160x160.jpg", class: "img-circle elevation-2" %>
         </div>
         <div class="info">
-          <a href="<%= profile_admin_user_path %>" class="d-block"><%= current_user.email %></a>
+          <a href="<%= admin_user_path(current_user) %>" class="d-block"><%= current_user.email %></a>
         </div>
       </div>
 
-      <!-- SidebarSearch Form -->
+      <!-- SidebarSearch Form 
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
@@ -27,7 +27,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </div>-->
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -42,8 +42,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item<% if ["experts", "books"].include?(controller.controller_name) %> menu-open<% end %>">
-            <a href="#" class="nav-link<% if ["experts", "books"].include?(controller.controller_name) %> active<% end %>">
+          <li class="nav-item<% if ["experts", "books", "dissertations", "noms", "journals"].include?(controller.controller_name) %> menu-open<% end %>">
+            <a href="#" class="nav-link<% if ["experts", "books", "dissertations", "noms", "journals"].include?(controller.controller_name) %> active<% end %>">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 <%= t(".data") %>
@@ -59,25 +59,25 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<%= admin_dissertations_path %>" class="nav-link<% if controller.controller_name == "dissertations" %> active<% end %>">
                   <i class="fa-solid fa-graduation-cap nav-icon"></i>
-                  <p><%= t(".papers") %></p>
+                  <p><%= t(".dissertations") %></p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<%= admin_journals_path %>" class="nav-link<% if controller.controller_name == "journals" %> active<% end %>">
                   <i class="fa-solid fa-photo-film nav-icon"></i>
                   <p><%= t(".journals") %></p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<%= admin_books_path %>" class="nav-link<% if controller.controller_name == "books" %> active<% end %>">
                   <i class="fa-solid fa-book nav-icon"></i>
                   <p><%= t(".books") %></p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<%= admin_noms_path %>" class="nav-link<% if controller.controller_name == "noms" %> active<% end %>">
                   <i class="fa-solid fa-book-journal-whills nav-icon"></i>
                   <p><%= t(".ancient_books") %></p>
                 </a>

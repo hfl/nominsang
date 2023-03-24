@@ -1,0 +1,33 @@
+              <%= form_with(model: [:admin, dissertation]) do |form| %>
+                <div class="card-body">
+                  <div class="form-group">
+                    <%= form.label :title %>
+                    <%= form.text_field :title, class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <%= form.label :subtitle %>
+                    <%= form.text_field :subtitle, class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <%= form.label :author %>
+                    <%= form.text_field :author, class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <%= form.label :teacher %>
+                    <%= form.text_field :teacher, class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <%= form.label :language %>
+                    <%= form.text_field :language, class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <%= form.label :abstract %>
+                    <%= form.text_area :abstract, class: "form-control", rows: 6 %>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <%= form.submit class: "btn btn-primary" %>
+                </div>
+              <% end %>

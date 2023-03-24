@@ -38,7 +38,7 @@ class Admin::ExpertsController < ApplicationController
       if @expert.update(expert_params)
         format.html {redirect_to admin_expert_url(@expert), notice: "专家信息已更新！"}
       else
-        format.html {render :edit, status: :unprocessable_entiy}
+        format.html {render :edit, status: :unprocessable_entity}
       end
     end
   end

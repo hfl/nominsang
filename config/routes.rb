@@ -3,10 +3,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'dashboard/home'
     root "dashboard#home"
-    resources :experts
-    resources :users do
-      get 'profile', on: :member
-    end
+    resources :experts, :users, :dissertations, :noms, :books, :journals
     resource :site
   end
   get 'home/index'

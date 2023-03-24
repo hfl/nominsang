@@ -1,0 +1,40 @@
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1><%= t(".new_dissertation") %></h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><%= link_to t("home"), admin_root_path %></li>
+              <li class="breadcrumb-item"><%=link_to t(".dissertation"), admin_dissertations_path %></li>
+              <li class="breadcrumb-item active"><%= t(".new_dissertation") %></li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title"><%= t(".dissertation_information") %></h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <%= render "form", dissertation: @dissertation %>
+            </div>
+            <!-- /.card -->
+
+          </div>
+          <!--/.col (left) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>

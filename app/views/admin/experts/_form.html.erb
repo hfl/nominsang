@@ -80,10 +80,21 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-              <div class="custom-file">
+              <div class="input-group">
+               <div class="custom-file">
                 <%= form.file_field :avatar, class: "custom-file-input" %>
-                <label for="expert_avatar" class="custom-file-label"><%= t(".please_select_avatar") %></label>
-              </div>               
+                <label for="expert_avatar" class="custom-file-label">
+                <% if expert.avatar.attached? %>
+                <%= expert.avatar.filename %>
+                <% else %>
+                <%= t(".please_select_avatar") %>
+                <% end %>
+                </label>
+              </div> 
+              <div class="input-group-append">
+                <span class="input-group-text"><%= t(".upload") %></span>
+              </div>              
+              </div>
               </div>
             </div>
             <!-- /.card-body -->

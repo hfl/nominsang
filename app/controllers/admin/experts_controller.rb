@@ -53,6 +53,6 @@ class Admin::ExpertsController < ApplicationController
   
   private
   def expert_params
-    params.require(:expert).permit(:name, :alias_name, :sex, :nation, :birthday, :deathday, :occupation, :biographical__text, :avatar)
+    params.require(:expert).permit(:name, :alias_name, :sex, :nation, :birthday, :deathday, :occupation, :biographical_text, :avatar)
   end
 end

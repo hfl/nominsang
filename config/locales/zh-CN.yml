@@ -1,9 +1,10 @@
 zh-CN:
+  # 视图
   # 通用
   home: "首页"
   created_at: "信息创建于"
   updated_at: "信息更新于"
-  
+  # 各网页
   layouts:
     admin:
       shared:
@@ -19,6 +20,9 @@ zh-CN:
           site: "站点配置"
   admin:
     experts:
+      show:
+        expert_information: "专家信息"
+        experts: "专家"
       new:
         experts: "专家"
         new_expert: "新增专家"
@@ -26,6 +30,7 @@ zh-CN:
         general: "通用信息"
         avatar: "肖像"
         please_select_avatar: "请选择肖像文件"
+        upload: "上传"
       index:
         experts: "专家"
         experts_list: "全部专家"
@@ -63,12 +68,15 @@ zh-CN:
         users_list: "全部用户"
         new_user: "新增用户"
 
-  # 数据库表
+  # 数据库
   activerecord:
+    # 模型，数据库表
     models:
       expert: "专家"
       site: "站点"
       dissertation: "学位论文"
+      language: "语种"
+    # 模型，数据库表的字段
     attributes:
       expert:
         name: "姓名"
@@ -91,3 +99,7 @@ zh-CN:
         teacher: "指导教师"
         abstract: "摘要"
         language_id: "论文主要语种"
+      language:
+        title: "语言"
+        code: "代码"
+        about: "说明"

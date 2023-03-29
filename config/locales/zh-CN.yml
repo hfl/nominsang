@@ -67,6 +67,14 @@ zh-CN:
         users: "用户"
         users_list: "全部用户"
         new_user: "新增用户"
+  devise:
+    sessions:
+      new:
+        please_login_to_proceed: "操作前请先登录"
+        remember_me: "记住我"
+        login: "登录"
+        email: "电子邮件"
+        password: "密码"
 
   # 数据库
   activerecord:
@@ -99,6 +107,10 @@ zh-CN:
         teacher: "指导教师"
         abstract: "摘要"
         language_id: "论文主要语种"
+        student_id: "学号"
+        department: "院系"
+        discipline: "学科/专业"
+        subject: "方向"
       language:
         title: "语言"
         code: "代码"
